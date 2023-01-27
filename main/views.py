@@ -1,3 +1,10 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+
+def hello(req, pk):
+    return HttpResponse(f'Тестовая страница: {pk}')
+
+
+def main_page(req):
+    return HttpResponse('Главная страница')
