@@ -1,0 +1,55 @@
+a.disabled {
+    pointer-events: none; /* делаем элемент неактивным для взаимодействия */
+    cursor: default; /*  курсор в виде стрелки */
+    color: #888;/* цвет текста серый */
+    }
+
+html {
+    background-color: #dae2ea;
+    height: 100vh;
+}
+
+.tag.is-primary {
+    background: linear-gradient(114.44deg, #7433FF 0%, #FFA3FD 100%);
+    border-radius: 7px;
+}
+
+.svg-icon {
+    width: 20px;
+}
+
+.navbar {
+    background-color: #dae2ea;
+}
+
+a.navbar-item:hover {
+    color: #00d1b2 !important;
+}
+
+#divider {
+    padding: 0;
+    margin: 0;
+
+}
+
+a.navbar-link:hover {
+    color: #00d1b2 !important;
+}
+
+th {
+    background-color: white;
+
+}
+
+.table.is-bordered td, .table.is-bordered th{
+    border-left:0px;
+}
+
+.footer{
+    background-color: #dae2ea !important;
+}
+
+.card{
+    width: 100%;
+    height: 500px;
+}
