@@ -1,63 +1,71 @@
 {% extends 'main.html' %}
 
 {% block content %}
+<div class="card mt-5">
+    {% include 'breadcrumb.html' %}
+    <div class="block is-flex is-justify-content-center">
+        <table class="table is-bordered is-striped">
+            <div class="block">
+                <caption class="has-text-weight-bold mb-4 has-text-black has-text-left is-size-3">
+                ФИМЭ, ПМИ-19 <span class="is-size-5 has-text-right has-text-primary">1&nbsp;неделя</span>
+                </caption>
+            </div>
 
-<div class="block">
-    <table class="table is-bordered is-striped">
-        <caption class="has-text-weight-bold mb-4 has-text-black">ФИМЭ, ПМИ-19</caption>
-        <thead>
-            <tr>
-                <th colspan="2">День недели</th>
-                <th>Предмет</th>
-                <th><abbr title="Аудитория">Ауд</abbr></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th rowspan="3">Ср</th>
-                <td class="is-selected">10:15 — 11:50</td>
-                <td class="is-selected">Базы данных, доцент Шехтман В.Е., лекция</td>
-                <td class="is-selected"><abbr title="пр. Металлургов, 19. ауд.615">615/4</abbr></td>
-            </tr>
-            <tr>
-                <td>12:15 — 13:50</td>
-                <td>Математические модели и методы искусственного интеллекта, <a>Паульзен М.В</a>, лекция</td>
-                <td><abbr title="пр. Металлургов, 19. ауд.501">615/4</abbr></td>
-            </tr>
-            <tr>
-                <td>14:00 — 15:35</td>
-                <td>Математические модели и методы искусственного интеллекта, Паульзен М.В, лекция</td>
-                <td><abbr title="пр. Металлургов, 19. ауд.501">615/4</abbr></td>
-            </tr>
-            <tr>
-                <th rowspan="2" id="nosty">Чт</th>
-                <td>10:15 — 11:50</td>
-                <td>Компьютерная графика, Вячкина Е.А., лекция</td>
-                <td><abbr title="пр. Металлургов, 19. ауд.402">402/4</abbr></td>
-            </tr>
-            <tr>
-                <td>12:15 — 13:50</td>
-                <td>Компьютерная графика, Вячкина Е.А., лекция</td>
-                <td><abbr title="пр. Металлургов, 19. ауд.712">712/4</abbr></td>
-            </tr>
-            <tr>
-                <th rowspan="3">Пт</th>
-                <td>08:30 — 10:05</td>
-                <td>Теория языков и трансляций, зав.кафедрой Решетникова Е.В., лекция</td>
-                <td><abbr title="пр. Металлургов, 19. ауд.712">712/4</abbr></td>
-            </tr>
-            <tr>
-                <td>10:15 — 11:50</td>
-                <td>Проектирование и разработка мобильных приложений, <a>Гаврилова Ю.С.</a>, лекция</td>
-                <td><abbr title="пр. Металлургов, 19. ауд.712">712/4</abbr></td>
-            </tr>
-            <tr>
-                <td>12:15 — 13:50</td>
-                <td>Численные методы, доцент Вячкин Е.С., лекция</td>
-                <td><abbr title="пр. Металлургов, 19. ауд.716">716/4</abbr></td>
-            </tr>
-        </tbody>
-    </table>
+            <thead>
+                <tr>
+                    <th colspan="2">День недели</th>
+                    <th>Предмет</th>
+                    <th><abbr title="Аудитория">Ауд</abbr></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th rowspan="3">Ср</th>
+                    <td class="is-selected">10:15 — 11:50</td>
+                    <td class="is-selected">Базы данных, доцент Шехтман В.Е., лекция</td>
+                    <td class="is-selected"><abbr title="пр. Металлургов, 19. ауд.615">615/4</abbr></td>
+                </tr>
+                <tr>
+                    <td>12:15 — 13:50</td>
+                    <td>Математические модели и методы искусственного интеллекта, <a>Паульзен М.В</a>, лекция</td>
+                    <td><abbr title="пр. Металлургов, 19. ауд.501">615/4</abbr></td>
+                </tr>
+                <tr>
+                    <td>14:00 — 15:35</td>
+                    <td>Математические модели и методы искусственного интеллекта, Паульзен М.В, лекция</td>
+                    <td><abbr title="пр. Металлургов, 19. ауд.501">615/4</abbr></td>
+                </tr>
+                <tr>
+                    <th rowspan="2" id="nosty">Чт</th>
+                    <td>10:15 — 11:50</td>
+                    <td>Компьютерная графика, Вячкина Е.А., лекция</td>
+                    <td><abbr title="пр. Металлургов, 19. ауд.402">402/4</abbr></td>
+                </tr>
+                <tr>
+                    <td>12:15 — 13:50</td>
+                    <td>Компьютерная графика, Вячкина Е.А., лекция</td>
+                    <td><abbr title="пр. Металлургов, 19. ауд.712">712/4</abbr></td>
+                </tr>
+                <tr>
+                    <th rowspan="3">Пт</th>
+                    <td>08:30 — 10:05</td>
+                    <td>Теория языков и трансляций, зав.кафедрой Решетникова Е.В., лекция</td>
+                    <td><abbr title="пр. Металлургов, 19. ауд.712">712/4</abbr></td>
+                </tr>
+                <tr>
+                    <td>10:15 — 11:50</td>
+                    <td>Проектирование и разработка мобильных приложений, <a>Гаврилова Ю.С.</a>, лекция</td>
+                    <td><abbr title="пр. Металлургов, 19. ауд.712">712/4</abbr></td>
+                </tr>
+                <tr>
+                    <td>12:15 — 13:50</td>
+                    <td>Численные методы, доцент Вячкин Е.С., лекция</td>
+                    <td><abbr title="пр. Металлургов, 19. ауд.716">716/4</abbr></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    {% include 'pagination.html' %}
 </div>
 
 {% endblock %}

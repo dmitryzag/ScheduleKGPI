@@ -18,22 +18,27 @@ class Teacher(models.Model):
 
 
 class Faculty(models.Model):
+    TITLE = 'Факультеты'
     name = models.CharField(max_length=200, null=True)
     short_name = models.CharField(max_length=200, null=True)
     slug = models.SlugField(null=True)
+
+    def get_absolute_url(self):
+        return f'{self.slug}/'
 
     def __str__(self):
         return self.name
 
 
 class Speciality(models.Model):
+    TITLE = 'Специальности'
     name = models.CharField(max_length=200)
     short_name = models.CharField(max_length=200)
     slug = models.SlugField(null=True, blank=True)
     faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE)
 
     def get_absolute_url(self):
-        return "{0}".format(self.slug)
+        return f'/{self.faculty.slug}/{self.slug}/'
 
     def __str__(self):
         return "{0}, {1}".format(self.name, self.short_name)
@@ -48,10 +53,16 @@ class Building(models.Model):
 
 
 class Group(models.Model):
+    TITLE = 'Группы'
     speciality = models.ForeignKey(Speciality, on_delete=models.CASCADE)
     year = models.CharField(max_length=200)
-    faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE)
     slug = models.SlugField(null=True, blank=True)
+
+    def name(self):
+        return f'{self.speciality.short_name}-{self.year[-2:]}'
+
+    def get_absolute_url(self):
+        return f'{self.speciality.get_absolute_url()}{self.slug}/'
 
     def __str__(self):
         return f'{self.speciality.short_name}-{self.year[-2:]}'

@@ -4,32 +4,28 @@ a.disabled {
     color: #888;/* цвет текста серый */
     }
 
-html {
-    background-color: #dae2ea;
+html{
     height: 100vh;
+    background-color: #F7F7FC;
 }
 
-.tag.is-primary {
+body{
+    height: 100vh;
+    background-color: #F7F7FC;
+}
+
+.tag.is-odd {
     background: linear-gradient(114.44deg, #7433FF 0%, #FFA3FD 100%);
     border-radius: 7px;
+    color: #FCFCFC;
+    width: 100px;
 }
 
-.svg-icon {
-    width: 20px;
-}
-
-.navbar {
-    background-color: #dae2ea;
-}
-
-a.navbar-item:hover {
-    color: #00d1b2 !important;
-}
-
-#divider {
-    padding: 0;
-    margin: 0;
-
+.tag.is-even{
+    background: linear-gradient(339deg, #c4ec8e,#00afb7,#3f5e95);
+    border-radius: 7px;
+    color: #FCFCFC;
+    width: 100px;
 }
 
 a.navbar-link:hover {
@@ -38,18 +34,20 @@ a.navbar-link:hover {
 
 th {
     background-color: white;
-
 }
 
 .table.is-bordered td, .table.is-bordered th{
-    border-left:0px;
+    border-left: 0px;
 }
 
 .footer{
-    background-color: #dae2ea !important;
+    background-color: #F7F7FC !important;
 }
 
 .card{
     width: 100%;
-    height: 500px;
+}
+
+.navbar{
+    background-color: #F7F7FC !important;
 }

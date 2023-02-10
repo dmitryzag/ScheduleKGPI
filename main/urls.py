@@ -1,8 +1,9 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 
 urlpatterns = [
-    path('', views.main_page),
-    path('<str:faculty>/', views.spec),
-    path('<str:spec>', views.hello)
+    path('', views.main),
+    path('<str:faculty>/', views.main),
+    path('<str:faculty>/<str:spec>/', views.main),
+    path('<str:faculty>/<str:spec>/<str:group>/', views.sched),
 ]

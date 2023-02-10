@@ -1,23 +1,25 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from main.schedule import Schedule
 
 
-def spec(req, faculty):
+def main(req, faculty='', spec=''):
     schedule = Schedule()
-    print(schedule.pagination())
-    context = {'parity': Schedule.get_current_parity()}
-    return render(req, 'main.html', context)
+    faculties = schedule.faculties
+    specialities = schedule.specialities.filter(faculty__slug=faculty)
+    groups = schedule.groups.filter(speciality__slug=spec)
+    items = groups or specialities or faculties
+    current_parity = Schedule.get_current_parity()
+
+    context = {'items': items, 'parity': current_parity}
+
+    return render(req, 'items.html', context)
 
 
-def hello(req, spec):
-    page = req.GET.get('page')
+def sched(req, **kwargs):
     schedule = Schedule()
-    page_obj = schedule.pagination().get_page(page)
-    obj_week = schedule.get_week(page)
-    return render(req, 'main.html', {'page_obj': page_obj, 'obj_week': obj_week})
+    # items = schedule.groups.filter(speciality__faculty__slug=faculty, speciality__slug=spec)
+    current_parity = Schedule.get_current_parity()
 
+    context = {'items': {}, 'parity': current_parity}
 
-def main_page(req):
-    context = {'parity': Schedule.get_current_parity()}
-    return render(req, 'faculties.html', context)
+    return render(req, 'schedule.html', context)

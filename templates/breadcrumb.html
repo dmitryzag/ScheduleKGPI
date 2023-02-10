@@ -1,0 +1,7 @@
+<nav class="breadcrumb pl-5 pt-5" aria-label="breadcrumbs">
+  <ul>
+      {% for crumb in breadcrumbs %}
+          <li><a href="{{ crumb.get_absolute_url }}">{{ crumb }}</a></li>
+      {% endfor %}
+  </ul>
+</nav>

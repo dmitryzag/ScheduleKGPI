@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div class="card mt-5 pb-6">
+        {% include 'breadcrumb.html' %}
+
+        <div class="block ml-5">
+        <ul>
+            {% for item in items %}
+                <li class="has-text-weight-bold mt-3">
+                    <a href="{{ item.get_absolute_url }}">{{ item.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        </div>
+    </div>
+{% endblock %}

@@ -1,4 +1,4 @@
-from main.models import Pair
+from main.models import Pair, Faculty, Speciality, Group
 from django.core.paginator import Paginator
 import datetime
 
@@ -9,13 +9,17 @@ class Schedule:
 
     def __init__(self):
         self.schedule = Pair.objects.all()
+        self.faculties = Faculty.objects.all()
+        self.specialities = Speciality.objects.all()
+        self.groups = Group.objects.all()
 
     @classmethod
     def get_current_parity(cls):
         week = cls.TODAY.isocalendar().week % 2
-        parity = 'НЕЧЕТНАЯ' if week else 'ЧЕТНАЯ'
+        word = 'НЕЧЕТНАЯ' if week else 'ЧЕТНАЯ'
+        style = 'odd' if week else 'even'
 
-        return f'{parity} НЕДЕЛЯ'
+        return {'style': style, 'word': word}
 
     def get_day(self):
         pass
@@ -32,4 +36,3 @@ class Schedule:
     def pagination(self):
         pages = Paginator(self.get_all_weeks(), 1)
         return pages
-        # return pages
